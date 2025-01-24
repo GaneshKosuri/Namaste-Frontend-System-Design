@@ -4,8 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!-- We have allowed this making this ource as trusted -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Unsafe inline script -->
+
+    <script nonce="randomKey">
+      console.log("My trusted code");
+    </script>
+
+    <script>
+      console.log("My not trusted code");
+    </script>
+
+    <!-- Blocked by CSP -->
+    <script src="http://unsecure.com/abc.js"></script>
   </head>
   <body>
     <h1>Page for CORS</h1>
+    <img
+      src="https://media.licdn.com/dms/image/v2/D5603AQGfuYRF0f1tHQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1676873035862?e=1743033600&v=beta&t=MoS6J8KjBWqmwGEMu5A-A4FwrVxQKnfyKJP3Il8bY-c"
+    />
   </body>
 </html>
