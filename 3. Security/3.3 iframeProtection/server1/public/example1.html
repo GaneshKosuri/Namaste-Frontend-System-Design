@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Hijacking Example</title>
+  </head>
+  <body>
+    <h1>Click Hijacking Example</h1>
+    <p>Click below button for Click Hijacking demo</p>
+    <iframe
+      src="http://localhost:5011/iframe-website1"
+      id="legit-iframe"
+    ></iframe>
+    <button id="overlay-button">Click Me!</button>
+    <style>
+      #legit-iframe {
+        opacity: 0;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    </style>
+
+    <script>
+      document
+        .getElementById("overlay-button")
+        .addEventListener("click", () => {
+          alert("button clicked");
+        });
+    </script>
+  </body>
+</html>

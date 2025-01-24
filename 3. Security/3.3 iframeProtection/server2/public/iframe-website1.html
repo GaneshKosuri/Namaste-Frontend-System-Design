@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Hijacking Iframe</title>
+  </head>
+  <body>
+    <h1>Child Iframe</h1>
+    <p>Iframe: Click below button for Click Hijacking demo</p>
+
+    <button style="background-color: red" id="iframe-overlay-btn">
+      Pay now
+    </button>
+
+    <script>
+      document
+        .getElementById("iframe-overlay-btn")
+        .addEventListener("click", () => {
+          alert("iframe button cliked");
+        });
+    </script>
+  </body>
+</html>
